@@ -12,6 +12,10 @@ order: 4
 
 도움이 되셨다면 좋겠습니다.
 
+## 연결되어있는 Github 저장소
+
+<https://github.com/mcpads/mcpads.github.io>
+
 ## 블로그 주인
 
 - 수학과, 컴퓨터공학과 복수 전공자
