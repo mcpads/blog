@@ -35,31 +35,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.head_ref }}
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          persist-credentials: true
           fetch-depth: 0
           # submodules: true
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
-      - name: Run renaming post tool python script
-        run: python3 tools/rename_posts.py
-
-      - name: Commit renamed files
-        run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --exit-code; then
-            git add .
-            git commit -am "GA rename some posts by title"
-          fi
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          ssh: true
-          force: true
-          branch: ${{ github.head_ref }}
-
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v1
