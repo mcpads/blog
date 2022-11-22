@@ -6,6 +6,11 @@ on:
       - master
     paths-ignore:
       - .gitignore
+      - tools/**
+      - .github/**
+      - .vscode/**
+      - .gitattributes
+      - .gitmodules
       - README.md
       - LICENSE
 
@@ -30,6 +35,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          ref: ${{ github.head_ref }
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
           persist-credentials: true
           fetch-depth: 0
@@ -43,14 +49,16 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -am "GA rename some posts by title"
+          if ! git diff --exit-code; then
+            git add .
+            git commit -am "GA rename some posts by title"
+          fi
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           ssh: true
-          branch: ${{ github.ref }}
           force: true
+          branch: ${{ github.head_ref }}
 
       - name: Setup Pages
         id: pages

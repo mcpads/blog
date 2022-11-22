@@ -30,4 +30,4 @@ for f in markdown_files:
                     os.rename(os.path.join(file_path, f),
                               os.path.join(file_path, new_file_name))
                 else:
-                    print('File already exists: ', new_file_name)
+                    raise Exception("File already exists: " + new_file_name)
