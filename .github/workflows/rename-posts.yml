@@ -13,6 +13,11 @@ on:
       - README.md
       - LICENSE
 
+# Allow one concurrent deployment
+concurrency:
+  group: "rename-posts"
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
