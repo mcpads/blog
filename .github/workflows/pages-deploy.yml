@@ -43,6 +43,9 @@ jobs:
         id: pages
         uses: actions/configure-pages@v1
 
+      - name: Run renaming post tool python script
+        run: python3 tools/rename_posts.py
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
