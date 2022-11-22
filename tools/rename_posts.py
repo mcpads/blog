@@ -34,7 +34,7 @@ def copy_files(file_path):
 
 my_path = os.path.abspath(os.path.dirname(__file__))
 target_file_dir = os.path.join(my_path, '../_posts/')
-original_file_dir = os.path.join(my_path, '../posts/')
+original_file_dir = os.path.join(my_path, '../structured_post/')
 
 if __name__ == '__main__':
     if not os.path.exists(target_file_dir):
