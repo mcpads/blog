@@ -15,11 +15,7 @@ tags: [ocaml, programming language]
 #   height: 400   # in pixels
 #   alt: image alternative text
 # pin: true
----
-
-
-layout: post
-title: Markdown Style Guide
+# layout: post
 ---
 
 This is a demo of all styled elements in Jekyll Now.
@@ -28,7 +24,7 @@ This is a demo of all styled elements in Jekyll Now.
 
 This is a paragraph, it's surrounded by whitespace. Next up are some headers, they're heavily influenced by GitHub's markdown style.
 
-## Header 2 (H1 is reserved for post titles)##
+## Header 2 (H1 is reserved for post titles) ##
 
 ### Header 3
 
@@ -46,9 +42,11 @@ An image, located within /images
 ![Desktop View](/assets/img/sample/mockup.png){: .shadow }
 
 * A bulletted list
+
 - alternative syntax 1
+
 + alternative syntax 2
-  - an indented list item
+  * an indented list item
 
 1. An
 2. ordered
@@ -56,13 +54,12 @@ An image, located within /images
 
 Inline markup styles:
 
-- _italics_
-- **bold**
-- `code()`
+* _italics_
+* **bold**
+* `code()`
 
 > Blockquote
 >> Nested Blockquote
-
 
 Use two trailing spaces
 on the right
@@ -87,18 +84,21 @@ Finally, horizontal lines
 ```shell
 echo 'No more line numbers!'
 ```
+
 {: .nolineno }
 
 ```shell
 # content
 ```
+
 {: file="path/to/file" }
 
-
 {% raw %}
+
 ```liquid
 {% if product.title contains 'Pack' %}
   This product's title contains the word Pack.
 {% endif %}
 ```
+
 {% endraw %}
